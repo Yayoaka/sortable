@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+    <script src="assets/Home.js"></script>
+    <script src="assets/popup.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <image src="assets/wonderwoman.jpg" alt="batman-logo" class="logo">
+      <h1>Welcome</h1>
+      <image src="assets/bat.jpg" alt="batman-logo" class="logo">
+    </header>
+    <div class="search-bar">
+      <form>
+        <div id="search">
+          <select id="term_key" name="key" style="width: 200px;font-size: 15px;padding: 6px;">
+            <option value="name">Name</option>
+            <option value="fullname">Full name</option>
+            <option value="race">Race</option>
+            <option value="gender">Gender</option>
+            <option value="birth">Place of birth</option>
+            <option value="align">Alignment</option>
+          </select>
+          <input
+            id="hero_id"
+            type="text"
+            name="q"
+            value=""
+            placeholder="  Search an hero..."
+            length="80"
+            style="width: 600px; font-size: 22px; padding: 4px"
+            oninput="launchSearch(this.value)"
+            autocomplete="off"
+          />
+        </div>
+      </form>
+    </div>
+
+    <div class="pages">
+      <button class="button-last-previous" type="button" value="next">
+        First page
+      </button>
+      <button class="button-previous" type="button" value="next">
+        Previous page
+      </button>
+
+      <div class="selector">
+        <div class="select">
+          <label for="select">Choose the amount of heroes per page : </label>
+          <select id="select" onchange="selectorValue()">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="all">all</option>
+          </select>
+        </div>
+        <div class="currentPage">
+          <p>Current Page: <span id="currentPageDisplay"></span></p>
+        </div>
+      </div>
+
+      <button class="button-next" type="button">Next page</button>
+      <button class="button-last-next" type="button">Last page</button>
+    </div>
+
+    <div class="container">
+      <div id="myModal" class="modal">
+        <span class="close"><button>Close</button></span>
+        <div class="modal-content" id="modal-content"></div>
+      </div>
+
+      <div class="table">
+        <table id="table_results" width="100%" border="1">
+          <tr>
+            <th width="3%"><a href="#" class="header-sort">ID</a></th>
+            <th width="8%"><a href="#" class="header-sort">Name</a></th>
+            <th width="8%">Image</th>
+            <th width="8%"><a href="#" class="header-sort">Full name</a></th>
+            <th width="10%"><a href="#" class="header-sort">Powerstats</a></th>
+            <th width="8%"><a href="#" class="header-sort">Race</a></th>
+            <th width="8%"><a href="#" class="header-sort">Gender</a></th>
+            <th width="10%"><a href="#" class="header-sort">Height</a></th>
+            <th width="10%"><a href="#" class="header-sort">Weight</a></th>
+            <th width="8%">
+              <a href="#" class="header-sort">Place of birth</a>
+            </th>
+            <th width="8%"><a href="#" class="header-sort">Alignement</a></th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
